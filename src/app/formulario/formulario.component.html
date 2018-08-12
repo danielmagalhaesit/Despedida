@@ -1,0 +1,130 @@
+<div class="card">
+  <h5 class="card-header">Detalhes</h5>
+  <div class="card-body">
+    <form>
+      <div id="div_id_username" class="form-group required">
+        <label for="id_username" class="control-label col-md-4  requiredField"> Vai aonde?
+          <span class="asteriskField">*</span>
+        </label>
+        <div class="controls col-md-8 ">
+          <input class="input-md  textinput textInput form-control" #cidade id="id_username" maxlength="30" name="username" placeholder="São Paulo"
+            style="margin-bottom: 10px" type="text" />
+        </div>
+      </div>
+
+      <div id="div_id_email" class="form-group required">
+        <label for="id_email" class="control-label col-md-4  requiredField"> Quantas Pessoas?
+          <span class="asteriskField">*</span>
+        </label>
+        <div class="controls col-md-8 ">
+          <input class="input-md emailinput form-control" #pessoas id="id_email" name="email" placeholder="14" style="margin-bottom: 10px"
+            type="number" />
+        </div>
+      </div>
+
+      <div id="div_id_select" class="form-group required">
+        <label for="id_select" class="control-label col-md-4  requiredField"> Passou pretin?
+          <span class="asteriskField">*</span>
+        </label>
+        <div class="controls col-md-8 " style="margin-bottom: 10px">
+          <label class="radio-inline">
+            <input type="radio" #pretin checked="checked" name="select" id="id_select_1" value="Sim" style="margin-bottom: 10px">Sim</label>
+          <label class="radio-inline">
+            <input type="radio" name="select" id="id_select_2" value="Nao" style="margin-bottom: 10px">Não</label>
+        </div>
+      </div>
+
+      <div id="div_id_roupa" class="form-group required">
+        <label for="id_roupa" class="control-label col-md-4  requiredField"> Que roupa?
+          <span class="asteriskField">*</span>
+        </label>
+        <div class="controls col-md-8 " style="margin-bottom: 10px">
+          <label class="radio-inline">
+            <input checked type="radio" #roupa name="roupa" id="roupa-passeio" value="M" style="margin-bottom: 10px">Passeio completo</label>
+          <label class="radio-inline">
+            <input type="radio" name="roupa" id="roupa-esporte" value="F" style="margin-bottom: 10px">Esporte fino </label>
+        </div>
+      </div>
+
+      <div id="roupa-de-frio" class="form-group required">
+        <label for="id_roupa_de_frio" class="control-label col-md-4  requiredField"> Vai levar roupa de frio?
+          <span class="asteriskField">*</span>
+        </label>
+        <div class="controls col-md-8 " style="margin-bottom: 10px">
+          <label class="radio-inline">
+            <input checked type="radio" #frio name="frio" id="frio-sim" value="M" style="margin-bottom: 10px">Sim</label>
+          <label class="radio-inline">
+            <input type="radio" name="frio" id="frio-nao" value="F" style="margin-bottom: 10px">Não</label>
+        </div>
+      </div>
+
+      <div id="muricoca" class="form-group required">
+        <label for="id_muricoca" class="control-label col-md-4  requiredField"> Vai levar coisa de matar muriçoca?
+          <span class="asteriskField">*</span>
+        </label>
+        <div class="controls col-md-8 " style="margin-bottom: 10px">
+          <label class="radio-inline">
+            <input checked type="radio" #muricoca name="muricoca" id="muricoca-sim" value="M" style="margin-bottom: 10px">Sim</label>
+          <label class="radio-inline">
+            <input type="radio" name="muricoca" id="muricoca-nao" value="F" style="margin-bottom: 10px">Não</label>
+        </div>
+      </div>
+
+      <div id="mulher" class="form-group required">
+        <label for="id_mulher" class="control-label col-md-4  requiredField"> Vai mulher?
+          <span class="asteriskField">*</span>
+        </label>
+        <div class="controls col-md-8 " style="margin-bottom: 10px">
+          <label class="radio-inline">
+            <input checked type="radio" #mulher name="mulher" id="mulher-sim" value="M" style="margin-bottom: 10px">Sim</label>
+          <label class="radio-inline">
+            <input type="radio" name="mulher" id="mulher-nao" value="F" style="margin-bottom: 10px">Não</label>
+        </div>
+      </div>
+
+      <div id="droga" class="form-group required">
+        <label for="id_droga" class="control-label col-md-4  requiredField"> Vai usar droga? Sim ou Não?
+          <span class="asteriskField">*</span>
+        </label>
+        <div class="controls col-md-8 " style="margin-bottom: 10px">
+          <label class="radio-inline">
+            <input checked type="radio" #drogas name="droga" id="droga-sim" value="M" style="margin-bottom: 10px">Sim</label>
+          <label class="radio-inline">
+            <input type="radio" name="droga" id="droga-nao" value="F" style="margin-bottom: 10px">Com certeza</label>
+        </div>
+      </div>
+    </form>
+    <button type="button" class="btn btn-primary" (click)="openModal(template)">Submeter</button>
+
+    <ng-template #template>
+      <div class="modal-header">
+        <h4 class="modal-title pull-left">Boa Despedida!</h4>
+        <button type="button" class="close pull-right" aria-label="Close" (click)="modalRef.hide()">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <h4><small>Vai aonde?</small> {{ cidade.value }} </h4>
+        <h4><small>Quantas pessoas?</small> {{ pessoas.value }} </h4>
+        <h4><small>Passou pretin?</small> {{ pretin.checked && "Sim" || "Nao" }} </h4>
+        <h4><small>Que roupa?</small> {{ roupa.checked && "Regata" || "Regata" }} </h4>
+        <h4><small>Vai levar roupa de frio?</small> {{ frio.checked && "Sim" || "Nao" }} </h4>
+        <h4><small>Vai levar coisa de matar muriçoca?</small> {{ muricoca.checked && "Sim" || "Nao" }} </h4>
+        <h4><small>Vai mulher?</small> {{ mulher.checked && "Sim" || "Nao" }} </h4>
+        <h4><small>Vai usar droga?</small> {{ drogas.checked && "Sim" || "Com certeza" }} </h4>
+      </div>
+    </ng-template>
+  </div>
+
+</div>
+
+<!--
+  vai aonde
+  quantas pessoas
+  passou pretim
+  que roupa
+  te que levar roupa de frio
+  tem que levar coisa pra matar muriçoca
+  vai mulher ou nao
+  vai usar droga? sim ou nao?
+-->

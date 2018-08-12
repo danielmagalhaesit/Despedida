@@ -1,0 +1,27 @@
+.navbar-text {
+    color: #e9ecef
+}
+
+.photo-div {
+    background-image: url("https://image.ibb.co/gOupQp/bgbolha.jpg");
+    background-repeat: no-repeat;
+    min-height: 360px;
+    text-align: center;
+    padding: 40px;
+}
+
+.img-bolha {
+    height: 80px;
+    width: 80px;
+    line-height: 15;  
+    border-radius: 100%
+}
+
+.img-heading {
+    color: #e9ecef;
+}
+
+.small-heading {
+    color: #e9ecef;
+    margin-top: 246px;
+}
